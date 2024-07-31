@@ -19,11 +19,10 @@ compatibility_flags = ["nodejs_compat"]
 # - https://developers.cloudflare.com/workers/configuration/secrets/
 [vars]
 # set secret key `SECRET_KEY` via wrangler secret command
-
 BUCKET_NAME = "your_bucket_name"
 C2_ENDPOINT = "your_c2_endpoint"
 ACCESS_KEY_ID = "your_access_key"
 cache_control = "public"
 max_age = 300
 s_max_age = 600
-access_control_allow_origin = "*"
+access_control_allow_origin = ""

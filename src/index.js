@@ -86,8 +86,11 @@ export default {
 		const sMaxAge = env['s_max_age'] ?? 600;
 		let newHeaders = new Headers({
 			'Cache-Control': `${cacheControl}, max-age=${maxAge}, s-maxage=${sMaxAge}`,
-			'access-control-allow-origin': env['access_control_allow_origin'],
 		});
+
+		if (env['access_control_allow_origin']) {
+			newHeaders.set('access-control-allow-origin', env['access_control_allow_origin']);
+		}
 		copyHeaders(filterHeaders(resp.headers, ['access-control-allow-origin']), newHeaders);
 		const newResp = new Response(resp.body, {
 			status: resp.status,
