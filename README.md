@@ -28,3 +28,12 @@ If everything is cool, you can use folloing command to download your file from c
 	```
 	$ curl {cdn_url}/{bucket_name}/{object}
 	```
+
+# Cache settings
+You can configure your [cache settings](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) via 'wrangler.toml' or use the default configuration.
+
+# Cors
+If you encounter cors issues, you can set `access_control_allow_origin` from 'wrangler.toml'
+
+# Signed Headers
+To prevent authentication failures, a set of headers has been filtered for AWS signatures, including `x-real-ip`, `x-forwarded-proto`, and `accept-encoding`, and any headers beginning with `cf-`. This is because Cloudflare will overwrite these values in downstream requests.
