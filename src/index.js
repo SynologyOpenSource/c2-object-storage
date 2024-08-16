@@ -81,11 +81,9 @@ export default {
 			return new Response('Internal Server Error', { status: StatusCodes.INTERNAL_SERVER_ERROR });
 		}
 
-		const cacheControl = env['cache_control'] ?? 'public';
-		const maxAge = env['max_age'] ?? 300;
-		const sMaxAge = env['s_max_age'] ?? 600;
+		const cacheControl = env['cache_control'] ?? 'public, max-age=300';
 		let newHeaders = new Headers({
-			'Cache-Control': `${cacheControl}, max-age=${maxAge}, s-maxage=${sMaxAge}`,
+			'Cache-Control': `${cacheControl}`,
 		});
 
 		if (env['access_control_allow_origin']) {
