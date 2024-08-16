@@ -1,6 +1,10 @@
 # Propose
 This article is a guide on how to leverage [Cloudflare](https://developers.cloudflare.com/workers/)'s Content Delivery Network (CDN) services alongside [C2 Object Storage](https://c2.synology.com/zh-tw/object-storage/overview). By integrating these two solutions,  you can enable direct access from Cloudflare CDN to C2 Object Storage.
 
+# Installation
+Make sure Node.js and npm are installed.
+Use `npm install` to install the required packages such as `wrangler`
+
 # Configuration
 1. Move the '/sample_config/wrangler.toml' file to the project root directory.
 2. Fill in the required configuration details in the 'wrangler.toml' file.
@@ -12,7 +16,6 @@ This article is a guide on how to leverage [Cloudflare](https://developers.cloud
 
 
 # Scripts
-You need to setup the node envirnments and use `npm i` to install the required packages.
 - For local development
 	```
 	$ npm run dev
