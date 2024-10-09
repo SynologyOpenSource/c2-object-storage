@@ -3,7 +3,16 @@ This article is a guide on how to leverage [Cloudflare](https://developers.cloud
 
 # Installation
 Make sure Node.js and npm are installed.
-Use `npm install` to install the required packages such as `wrangler`
+- Install the required packges
+	```
+	$ npm i aws4fetch@^1.0.19 http-status-codes@^2.3.0
+
+	```
+- Install development dependencies:
+
+	```
+ 	$ npm i --save-dev @cloudflare/vitest-pool-workers@^0.4.5 wrangler@^3.67.0 prettier-eslint@^16.3.0
+	```
 
 # Configuration
 1. Move the '/sample_config/wrangler.toml' file to the project root directory.
@@ -18,11 +27,11 @@ Use `npm install` to install the required packages such as `wrangler`
 # Scripts
 - For local development
 	```
-	$ npm run dev
+	$ wrangler dev
 	```
 - Deploy to Cloudflare
 	```
-	$ npm run deploy
+	$ wrangler deploy
 	```
 
 # Example usage
